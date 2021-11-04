@@ -47,6 +47,8 @@ const asg = new awsx.autoscaling.AutoScalingGroup(
     vpc,
     // Defines the min and max number os instances allowed on this ASG
     templateParameters: { minSize: 1, maxSize: 2 },
+    // Subnet ids where the instances will be created
+    subnetIds: ['subnet-XXXXXX'],
     launchConfigurationArgs: {
       // Define the instance type
       instanceType: 't2.micro' as aws.ec2.InstanceType,
